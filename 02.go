@@ -6,13 +6,12 @@ package task
 
 import (
 	"fmt"
-	"os"
 )
 
 // SquareArr осуществляет последовательный вывод элментов s в Stdout
 func SquareArr(s []int) {
 	for _, v := range s {
-		fmt.Fprintf(os.Stdout, "%d\n", v*v)
+		fmt.Printf("%d\n", v*v)
 	}
 }
 
