@@ -3,6 +3,10 @@
 
 package task
 
-func setBit(n int64, order uint8, val bool) int64 {
-	return 0
+func SetBit(n int64, pos uint8, one bool) int64 {
+	if one {
+		return n | (1 << pos)
+	} else {
+		return n & ^(1 << pos)
+	}
 }
