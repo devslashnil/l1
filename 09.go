@@ -1,21 +1,39 @@
 package task
 
-func produce(in chan<- int) {
+import "fmt"
+
+func produce(in chan<- int, out chan<- int) {
 	for i := 0; i < 5; i++ {
 		in <- i
 	}
+	close(in)
 }
 
-func multiply(in chan<- int, out <-chan int) {
-
+func multiply(in <-chan int, out chan<- int) {
+	for {
+		if n, ok := <-in; ok {
+			out <- 2 * n
+		} else {
+			break
+		}
+	}
+	close(out)
 }
 
-func output(out chan<- int) {
-
+func output(out <-chan int) {
+	for {
+		if n, ok := <-out; ok {
+			fmt.Println(n)
+		} else {
+			break
+		}
+	}
 }
 
 func Conveyor() {
 	in := make(chan int)
 	out := make(chan int)
-
+	go produce(in, out)
+	go multiply(in, out)
+	output(out)
 }
