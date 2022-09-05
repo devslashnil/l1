@@ -6,7 +6,7 @@ import "sync"
 
 type Map[K comparable, V any] struct {
 	m  map[K]V
-	mu sync.Mutex
+	mu sync.RWMutex
 }
 
 func (m *Map[K, V]) Store(key K, value V) {
