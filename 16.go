@@ -1,9 +1,10 @@
-// Реализовать быструю сортировку массива (quicksort) встроенными методами языка.
+// Реализовать быструю сортировку массива (quicksort)
+// встроенными методами языка.
 
 package task
 
 type Number interface {
-	int64 | float64
+	int | int64 | float64 // и так далее
 }
 
 func partition[T Number](arr []T, low, high int) ([]T, int) {

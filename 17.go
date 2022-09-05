@@ -2,6 +2,9 @@
 
 package task
 
+// Find бинарный поиск на индексах [0, n)
+// где cmp возвращает результат сравнения значений i-ого элемента с искомым
+// если значения нет вернёт n и false
 func Find(n int, cmp func(int) int) (i int, found bool) {
 	// Определяем cmp(-1) > 0 and cmp(n) <= 0
 	// Инвариант: cmp(i-1) > 0, cmp(j) <= 0

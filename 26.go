@@ -8,6 +8,8 @@ import (
 	"unicode"
 )
 
+// IsUnique проходит по строке, складывает руны в нижнем регистре во множество,
+// если во множестве уже есть такая руна возвращает false, иначе true
 func IsUnique(s string) bool {
 	m := make(map[rune]struct{})
 	for _, v := range s {

@@ -6,6 +6,7 @@ package task
 import "strings"
 
 // ReverseWords Решение 1
+// Разбиваем строку на слайс слов, меняем, соединяем в одну строку
 func ReverseWords(s string) string {
 	words := strings.Fields(s)
 	for i, j := 0, len(s)-1; i < j; i, j = i+1, j-1 {
@@ -20,7 +21,7 @@ func ReverseWords2(s string) string {
 	runes := []rune(s)
 	start := 0
 	for end := 0; end < len(s); end++ {
-		// Если встречен пробел переварачиваем слово до него
+		// Если встречен пробел переворачиваем слово до него
 		if s[end] == ' ' {
 			SubReverse(runes, start, end)
 			start = end + 1

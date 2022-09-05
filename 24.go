@@ -6,6 +6,8 @@ package task
 
 import "math"
 
+// Point c инкапсулированными x,y
+// маленькая буква означает недоступность не из пакета task
 type Point struct {
 	x, y float64
 }

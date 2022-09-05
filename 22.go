@@ -5,6 +5,7 @@ package task
 
 import "math/big"
 
+// MulDivSumSubBigInt пример работы с big.Int
 func MulDivSumSubBigInt() {
 	var a, b, r *big.Int
 	a.Exp(big.NewInt(2), big.NewInt(64), nil) // 2^64 (1 << 64)
