@@ -4,10 +4,13 @@
 
 package task
 
+// Human родительская структура
 type Human struct{}
 
+// Foo встраиваемый метод
 func (_ Human) Foo() {}
 
+// Action структура для встраивания Human
 type Action struct {
 	// применили встраивание
 	Human

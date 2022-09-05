@@ -2,6 +2,7 @@
 
 package task
 
+// Swap меняет два указателя на T местами
 func Swap[T any](i1, i2 *T) {
 	i1, i2 = i2, i1
 }

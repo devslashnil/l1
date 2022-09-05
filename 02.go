@@ -8,7 +8,7 @@ import (
 	"fmt"
 )
 
-// SquareArr осуществляет последовательный вывод элментов s в Stdout
+// SquareArr осуществляет последовательный вывод элементов s в Stdout
 func SquareArr(s []int) {
 	for _, v := range s {
 		fmt.Printf("%d\n", v*v)
@@ -17,7 +17,7 @@ func SquareArr(s []int) {
 
 // ConcurSquareOut разбивает подсчёт квадратов на gorNum горутин
 func ConcurSquareOut(s []int, gorNum int) {
-	// длина слайсов на которых будет конкуретно считаться квадраты
+	// длина слайсов на которых будет конкурентно считаться квадраты
 	step := len(s)/gorNum + 1
 	i := 0
 	for ; i < gorNum; i += step {

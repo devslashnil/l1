@@ -80,13 +80,14 @@ func goroutine8(b *bool) {
 	fmt.Println("goroutine8 alive!")
 	for {
 		if *b {
-			return
+			break
 		}
 	}
 	fmt.Println("goroutine8 has passed away...")
 }
 
-func way1() {
+// Way1 пример ждущей горутины
+func Way1() {
 	ctx := context.Background()
 	ctx, _ = context.WithTimeout(ctx, 3*time.Second)
 	go goroutine4(ctx)

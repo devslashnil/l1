@@ -3,7 +3,8 @@
 
 package task
 
-func Subset(s []string) map[string]struct{} {
+// Subset устанавливает ключи в m равные значениям строк, тем самым убираю дубликаты и создавая множество
+func Subset(s ...string) map[string]struct{} {
 	m := make(map[string]struct{})
 	for _, v := range s {
 		m[v] = struct{}{}
